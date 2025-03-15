@@ -1,0 +1,1 @@
+{"version":3,"file":"test.js","mappings":";;;;;;;;;;;;;AAAO,SAAS,OAAO;AACtB,UAAQ,IAAI,MAAM;AACnB","sources":["webpack:///./helpers/test.js"],"sourcesContent":["export function test() {\n\tconsole.log('test');\n}\n"],"names":[],"sourceRoot":""}
