@@ -1,0 +1,5 @@
+# .browserslistrc
+last 5 versions
+ie >= 11
+iOS >= 13
+Android >= 6

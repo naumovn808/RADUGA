@@ -1,0 +1,177 @@
+@import "./fonts.scss";
+@import "./normalize.scss";
+@import "./components/index.scss";
+
+body {
+	background-color: var(--color-bg-primary);
+	color: var(--color-text-primary);
+	font-family: var(--ffN), sans-serif;
+	overflow-x: hidden;
+	touch-action: manipulation;
+	user-select: auto;
+	font-size: var(--fz);
+}
+
+:root {
+	/* colors */
+	--color-default-white: #fff;
+	--color-default-black: #000;
+	--color-bg-primary: #ffffff;
+	--color-bg-secondary: #F7F7F7;
+	--color-bg-dark-blue: #1f3c88;
+	--color-bg-blue: #068dd9;
+	--color-text-primary: #010306;
+	--color-text-secondary: #848487;
+	--color-text-black: #000000;
+	--color-text-blue: #068dd9;
+
+	--ffN: "Nunito";
+
+	--fz: max(calc(1 * 1vw), 15px);
+
+	//sizes
+	--offset: max(calc(1.25 * 1vw), 15px);
+	--offset-xxxl: calc(var(--offset) * 10);
+	--offset-xxl: calc(var(--offset) * 8);
+	--offset-xl: calc(var(--offset) * 7);
+	--offset-l: calc(var(--offset) * 6);
+	--offset-m: calc(var(--offset) * 5);
+	--offset-s: calc(var(--offset) * 4);
+	--hh: calc(var(--offset) * 4);
+	--offset-grid: calc(var(--offset) * 4);
+}
+
+* {
+	box-sizing: border-box;
+
+	&:focus {
+		outline: none;
+	}
+
+	*::before,
+	*::after {
+		box-sizing: inherit;
+	}
+}
+
+::selection {
+	background-color: var(--violet);
+	color: var(--white);
+}
+
+::-webkit-scrollbar {
+	width: 0 !important;
+	height: 0 !important;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 50px;
+}
+
+.container {
+	padding: 0 var(--offset);
+	max-width: 780px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	text-wrap: balance;
+	user-select: text;
+}
+
+p {
+	user-select: text;
+	text-wrap: balance;
+}
+
+details {
+	display: block;
+}
+
+summary {
+	list-style: none;
+	cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+	text-wrap: balance;
+	user-select: text;
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+	outline: none;
+}
+
+img {
+	display: block;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: var(--fz);
+	padding: 0;
+	font-family: "Inter", sans-serif;
+	user-select: text;
+
+	svg,
+	span {
+		pointer-events: none;
+	}
+}
+
+input {
+	font-family: var(--ffG), sans-serif;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+textarea {
+	resize: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+[hidden],
+[type="hidden"],
+.visually-hidden,
+.tns-visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
