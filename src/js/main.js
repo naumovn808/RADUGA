@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	init();
 	setSize();
 	map();
+	about();
 });
 
 function setSize() {
@@ -75,5 +76,13 @@ function map() {
 				slice.forEach((item) => item.classList.remove("active"));
 			}
 		});
+	});
+}
+
+function about() {
+	document.querySelectorAll(".about__card").forEach((card, index) => {
+		setTimeout(() => {
+			card.classList.add("active");
+		}, index * 150);
 	});
 }
