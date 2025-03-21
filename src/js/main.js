@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	map();
 	about();
 });
-
 function setSize() {
 	const windowWidth = window.innerWidth;
 
