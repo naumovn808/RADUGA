@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	setSize();
 	map();
 	about();
+	project();
 });
 function setSize() {
 	const windowWidth = window.innerWidth;
@@ -83,5 +84,48 @@ function about() {
 		setTimeout(() => {
 			card.classList.add("active");
 		}, index * 150);
+	});
+}
+
+function project() {
+	const tabs = document.querySelectorAll(".projects__tabs .btn");
+	const tabsInner = document.querySelector(".projects__tabs-inner");
+	const tabsContent = {
+		1: `<div class="projects__tabs-card">
+			<picture>
+				<source srcset="./images/project-1.avif" />
+				<img src="./images/project-1.png" alt="Project 1" />
+			</picture>
+			<h1>Запуск приложения для доставки продуктов (релиз в 2025 году)</h1>
+		</div>
+		<div class="projects__tabs-card">
+			<picture>
+				<source srcset="./images/project-2.avif" />
+				<img src="./images/project-2.png" alt="Project 1" />
+			</picture>
+			<h1>Открытие гипермаркета в городе Асан с площадью 1000 м²</h1>
+		</div>`,
+		2: `<div class="projects__tabs-card">
+			<picture>
+				<source srcset="./images/project-2.avif" />
+				<img src="./images/project-2.png" alt="Project 1" />
+			</picture>
+			<h1>Tab-2 title</h1>
+		</div>
+		<div class="projects__tabs-card">
+			<picture>
+				<source srcset="./images/project-1.avif" />
+				<img src="./images/project-1.png" alt="Project 1" />
+			</picture>
+			<h1>Tab-2 title</h1>
+		</div>`,
+	};
+	tabs.forEach((tab) => {
+		tab.addEventListener("click", () => {
+			const target = tab.dataset.tab;
+			tabs.forEach((t) => t.classList.remove("active"));
+			tab.classList.add("active");
+			tabsInner.innerHTML = tabsContent[target] || "Пусто";
+		});
 	});
 }
