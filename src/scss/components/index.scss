@@ -621,8 +621,8 @@
 		}
 
 		& svg {
-			width: calc(var(--offset) * 40);
-			height: calc(var(--offset) * 50);
+			width: 403px;
+			height: 617px;
 			object-fit: cover;
 		}
 	}
@@ -640,8 +640,74 @@
 	transition: all, 0.5s;
 	width: calc(var(--offset) * 2.5);
 	height: calc(var(--offset) * 3.5);
+	@media (max-width: 1300px) {
+		&[data-pin="north"] {
+			left: 40%;
+			top: 25%;
+		}
+		&[data-pin="seoul"] {
+			left: 28%;
+			top: 20%;
+		}
+		&[data-pin="south"] {
+			left: 20%;
+			top: 34%;
+		}
+		&[data-pin="daegu"] {
+			left: 42%;
+			top: 43%;
+		}
+		&[data-pin="jeolla"] {
+			left: 20%;
+			top: 57%;
+		}
+	}
+	@media (max-width: 999px) {
+		&[data-pin="north"] {
+			left: 50%;
+			top: 25%;
+		}
+		&[data-pin="seoul"] {
+			left: 44%;
+			top: 20%;
+		}
+		&[data-pin="south"] {
+			left: 40%;
+			top: 34%;
+		}
+		&[data-pin="daegu"] {
+			left: 52%;
+			top: 43%;
+		}
+		&[data-pin="jeolla"] {
+			left: 40%;
+			top: 57%;
+		}
+	}
+	@media (max-width: 700px) {
+		&[data-pin="north"] {
+			left: 50%;
+			top: 25%;
+		}
+		&[data-pin="seoul"] {
+			left: 40%;
+			top: 20%;
+		}
+		&[data-pin="south"] {
+			left: 32%;
+			top: 34%;
+		}
+		&[data-pin="daegu"] {
+			left: 52%;
+			top: 43%;
+		}
+		&[data-pin="jeolla"] {
+			left: 30%;
+			top: 57%;
+		}
+	}
 	&[data-pin="north"] {
-		left: 60%;
+		left: 55%;
 		top: 25%;
 	}
 	&[data-pin="seoul"] {
@@ -663,9 +729,6 @@
 	&:hover {
 		transform: scale(1.05);
 	}
-	@media (max-width: 999px) {
-		display: none;
-	}
 }
 .desc {
 	padding: 20px;
@@ -678,6 +741,66 @@
 	border-radius: 10px;
 	transition-duration: 0.5s;
 	transition-property: opacity;
+	@media (max-width: 1300px) {
+		&.north {
+			left: -34%;
+			top: -2%;
+		}
+		&.seoul {
+			left: -43%;
+			top: -12%;
+		}
+		&.south {
+			left: -51%;
+			top: 3%;
+		}
+		&.daegu {
+			right: 40%;
+			top: 5%;
+		}
+		&.jeolla {
+			left: -52%;
+			top: 30%;
+		}
+	}
+	@media (max-width: 1170px) {
+		&.north {
+			left: -40%;
+			top: -2%;
+		}
+		&.seoul {
+			left: -43%;
+			top: -12%;
+		}
+		&.south {
+			left: -51%;
+			top: 3%;
+		}
+		&.daegu {
+			right: 40%;
+			top: 5%;
+		}
+		&.jeolla {
+			left: -52%;
+			top: 30%;
+		}
+	}
+	@media (max-width: 999px) {
+		width: 100%;
+		max-width: 100vw;
+		.triangle {
+			display: none;
+		}
+		&.north,
+		&.seoul,
+		&.south,
+		&.daegu,
+		&.jeolla {
+			left: 50%;
+			top: 32%;
+			transform: translateX(-50%);
+		}
+	}
 	& h1 {
 		font-weight: 700;
 		font-size: calc(var(--fz));
@@ -705,34 +828,34 @@
 		transform: rotate(-45deg);
 		border-radius: 0 0 0 0.25em;
 	}
-
+	.close-btn {
+		width: 100%;
+		text-align: end;
+	}
 	&.north {
-		left: -14%;
-		top: 9%;
+		left: -10%;
+		top: -2%;
 	}
 	&.seoul {
-		left: -40%;
-		top: 5%;
+		left: -30%;
+		top: -12%;
 	}
 	&.south {
-		left: -42%;
-		top: 17%;
+		left: -35%;
+		top: 3%;
 	}
 	&.daegu {
 		right: 20%;
-		top: 20%;
+		top: 5%;
 	}
 	&.jeolla {
-		left: -48%;
-		top: 42%;
+		left: -40%;
+		top: 30%;
 	}
 	&.active {
 		opacity: 1;
 		z-index: 1;
 	}
-}
-#map_small {
-	display: none;
 }
 .about {
 	width: 100%;
@@ -1651,13 +1774,5 @@
 				height: calc(var(--offset) * 3);
 			}
 		}
-	}
-}
-@media (max-width: 999px) {
-	#map_small {
-		display: block;
-	}
-	#map_big {
-		display: none;
 	}
 }
