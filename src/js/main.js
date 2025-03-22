@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	map();
 	about();
 	project();
+	network();
 });
 function setSize() {
 	const windowWidth = window.innerWidth;
@@ -80,10 +81,42 @@ function map() {
 }
 
 function about() {
+	console.log("hi");
 	document.querySelectorAll(".about__card").forEach((card, index) => {
 		setTimeout(() => {
 			card.classList.add("active");
 		}, index * 150);
+	});
+}
+
+function network() {
+	gsap.registerPlugin(ScrollTrigger);
+	const cards = gsap.utils.toArray(".network__card");
+	const networkSection = document.querySelector(".network");
+	if (window.innerWidth <= 999) {
+		return;
+	}
+	ScrollTrigger.create({
+		trigger: networkSection,
+		start: "top top",
+		end: "bottom bottom",
+		pin: true,
+		invalidateOnRefresh: true,
+	});
+
+	cards.forEach((card, index) => {
+		gsap.set(card, { zIndex: cards.length - index });
+
+		gsap.to(card, {
+			y: index * -200,
+			scrollTrigger: {
+				trigger: card,
+				start: "top center+=100",
+				end: "top top+=40",
+				scrub: true,
+				invalidateOnRefresh: true,
+			},
+		});
 	});
 }
 
