@@ -109,11 +109,12 @@ function network() {
 
 		gsap.to(card, {
 			y: index * -200,
+			ease: "power1.out",
 			scrollTrigger: {
 				trigger: card,
 				start: "top center+=100",
 				end: "top top+=100",
-				scrub: true,
+				scrub: 0.3,
 				invalidateOnRefresh: true,
 			},
 		});
