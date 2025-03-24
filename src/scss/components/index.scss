@@ -638,8 +638,10 @@
 .pin {
 	position: absolute;
 	transition: all, 0.5s;
+	width: calc(var(--offset) * 2.5);
+	height: calc(var(--offset) * 3.5);
 	&[data-pin="north"] {
-		left: 60%;
+		left: 55%;
 		top: 25%;
 	}
 	&[data-pin="seoul"] {
