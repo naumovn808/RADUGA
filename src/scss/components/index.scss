@@ -553,7 +553,6 @@
 	align-items: center;
 	position: relative;
 	min-height: 100vh;
-	margin-top: var(--offset);
 	&__image {
 		width: 100%;
 		height: 100%;
@@ -574,6 +573,7 @@
 		align-items: center;
 		gap: calc(var(--offset) * 2);
 		padding: 0 var(--offset-xl);
+		height: 100vh;
 		width: 100%;
 
 		@media (max-width: 1280px) {
@@ -612,7 +612,8 @@
 		display: flex;
 		position: relative;
 		align-items: center;
-		width: 50%;
+		justify-content: center;
+		width: 100%;
 		height: 100%;
 		margin: auto 0;
 
@@ -621,9 +622,12 @@
 		}
 
 		& svg {
-			width: 403px;
-			height: 617px;
-			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			right: calc(var(--offset) * -6);
+			top: calc(var(--offset) * 4);
+
 		}
 	}
 }
@@ -637,32 +641,32 @@
 }
 .pin {
 	position: absolute;
+	cursor: pointer;
 	transition: all, 0.5s;
 	width: calc(var(--offset) * 2.5);
 	height: calc(var(--offset) * 3.5);
 
-	@media (max-width: 1300px) {
-		&[data-pin="north"] {
-			left: 40%;
-			top: 25%;
-		}
-		&[data-pin="seoul"] {
-			left: 28%;
-			top: 20%;
-		}
-		&[data-pin="south"] {
-			left: 20%;
-			top: 34%;
-		}
-		&[data-pin="daegu"] {
-			left: 42%;
-			top: 43%;
-		}
-		&[data-pin="jeolla"] {
-			left: 20%;
-			top: 57%;
-		}
+	&[data-pin="north"] {
+		right: 30%;
+		top: 35%;
 	}
+	&[data-pin="seoul"] {
+		right: 42%;
+		top: 20%;
+	}
+	&[data-pin="south"] {
+		right: 50%;
+		top: 40%;
+	}
+	&[data-pin="daegu"] {
+		right: 20%;
+		top: 40%;
+	}
+	&[data-pin="jeolla"] {
+		right: 48%;
+		top: 70%;
+	}
+
 	@media (max-width: 999px) {
 		&[data-pin="north"] {
 			left: 50%;
@@ -685,6 +689,7 @@
 			top: 57%;
 		}
 	}
+
 	@media (max-width: 700px) {
 		&[data-pin="north"] {
 			left: 50%;
@@ -715,6 +720,7 @@
 .desc {
 	padding: 20px;
 	background-color: white;
+	min-width: 30vw;
 	max-width: 30vw;
 	position: absolute;
 	z-index: 10;
@@ -815,24 +821,24 @@
 		text-align: end;
 	}
 	&.north {
-		left: -10%;
-		top: -2%;
+		left: 8%;
+		top: 8%;
 	}
 	&.seoul {
-		left: -30%;
-		top: -12%;
+		left: -4%;
+		top: -7%;
 	}
 	&.south {
-		left: -35%;
-		top: 3%;
+		left: -12%;
+		top: 12%;
 	}
 	&.daegu {
-		right: 20%;
-		top: 5%;
+		right: 22%;
+		top: 12%;
 	}
 	&.jeolla {
-		left: -40%;
-		top: 30%;
+		left: -10%;
+		top: 42%;
 	}
 	&.active {
 		opacity: 1;
