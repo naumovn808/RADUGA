@@ -19,6 +19,15 @@ body.open {
 
 main {
 	overflow: hidden;
+	padding-top: calc(var(--offset) * 4);
+
+	@media (max-width: 999px) {
+		padding-top: calc(var(--offset) * 7);
+	}
+
+	@media (max-width: 480px) {
+		padding-top: calc(var(--offset) * 5);
+	}
 }
 
 :root {

@@ -574,7 +574,10 @@
 	align-items: center;
 	position: relative;
 	min-height: 100vh;
-	background: linear-gradient(to top, #fff 5%, #f7f7f7 10%);
+
+	@media (max-width: 680px) {
+		background-color: #f7f7f7;
+	}
 	&__image {
 		width: 100%;
 		height: 100%;
@@ -651,7 +654,6 @@
 		@media (max-width: 999px) {
 			width: 100%;
 		}
-
 
 		& svg {
 			width: 100%;
@@ -901,23 +903,23 @@
 	}
 	&.north {
 		left: 8%;
-		top: 8%;
+		top: 4%;
 	}
 	&.seoul {
 		left: -4%;
-		top: -7%;
+		top: -11%;
 	}
 	&.south {
 		left: -12%;
-		top: 12%;
+		top: 8%;
 	}
 	&.daegu {
 		right: 22%;
-		top: 12%;
+		top: 8%;
 	}
 	&.jeolla {
 		left: -10%;
-		top: 42%;
+		top: 38%;
 	}
 	&.active {
 		opacity: 1;
@@ -928,18 +930,26 @@
 	width: 100%;
 	background-color: var(--color-bg-secondary);
 	padding-bottom: calc(var(--offset) * 5);
+	padding-top: calc(var(--offset) * 2);
 	@media (max-width: 999px) {
 		&-container {
 			flex-direction: column;
 		}
 		&__desc {
-			text-align: center;
 			width: 100%;
+
+			@media (max-width: 480px) {
+				text-align: center;
+			}
 			& div {
 				flex-direction: column-reverse;
 			}
 			& button {
 				display: none;
+			}
+
+			& p {
+				margin-top: 0;
 			}
 		}
 		&__cards {
@@ -954,7 +964,7 @@
 	}
 	&-container {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		gap: calc(var(--offset) * 2);
 		padding: 0 var(--offset-xl);
 
@@ -980,6 +990,10 @@
 			line-height: 126%;
 			color: var(--color-text-primary);
 			margin-bottom: var(--offset);
+
+			@media (max-width: 480px) {
+				font-size: calc(var(--fz) * 1.7);
+			}
 			& span {
 				color: var(--color-text-blue);
 			}
@@ -992,6 +1006,10 @@
 			line-height: 135%;
 			color: var(--color-text-secondary);
 			margin-bottom: calc(var(--offset) * 2);
+
+			@media (max-width: 480px) {
+				margin: 0;
+			}
 		}
 		& button {
 			width: fit-content;
@@ -1048,10 +1066,12 @@
 		padding: 30px;
 		background-color: white;
 		transform: translateY(20px);
-		transition: opacity 0.6s ease, transform 0.6s ease;
+		transition: opacity 1s ease, transform 1s ease;
+		cursor: pointer;
 		&.active {
 			opacity: 1;
 			transform: translateY(0);
+			transition: opacity 1s ease, transform 1s ease;
 		}
 
 		& h2 {
@@ -1099,7 +1119,7 @@
 	}
 }
 .section-title {
-	margin-left: calc(var(--offset) * 2);
+	// margin-left: calc(var(--offset) * 2);
 	margin-bottom: calc(var(--offset) * 2);
 	font-weight: 700;
 	font-size: calc(var(--fz) * 2);
@@ -1114,7 +1134,7 @@
 		display: flex;
 		justify-content: space-between;
 		background-color: var(--color-bg-secondary);
-		border-radius: 20px;
+		border-radius: var(--offset);
 		@media (max-width: 999px) {
 			flex-direction: column;
 		}
@@ -1123,7 +1143,8 @@
 		width: 30%;
 		height: 50%;
 		padding: calc(var(--offset) * 3);
-		border-radius: 20px;
+		border-radius: var(--offset);
+		cursor: pointer;
 		transition: all 0.2s ease;
 		@media (max-width: 999px) {
 			width: 100%;
@@ -1164,21 +1185,25 @@
 .network {
 	margin-bottom: calc(var(--offset) * 10);
 	@media (max-width: 999px) {
+		margin-bottom: 0;
 		&__cards {
 			// width: 100%;
 			display: flex;
+			align-items: stretch;
 			flex-direction: row;
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
 			-webkit-overflow-scrolling: touch;
-			gap: 20px;
+			gap: 0;
 		}
 		&__card {
 			width: 70%;
 			flex-shrink: 0;
 			flex-direction: column;
-			box-shadow: 0 0 24px 1px rgba(0, 0, 0, 0.12);
+			box-shadow: 0 0 1em 0.03em rgba(0, 0, 0, 0.12);
 			padding: calc(var(--offset));
+			margin: 1em 0 1em 1em !important;
+			scroll-snap-align: center;
 			&-image {
 				width: 100%;
 				height: 50%;
@@ -1209,7 +1234,18 @@
 		background-color: white;
 		padding: calc(var(--offset) * 3);
 		box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.07);
-		border-radius: 30px;
+		border-radius: calc(var(--offset) * 1.5);
+
+		&:last-of-type {
+			margin-right: 1em !important;
+		}
+		&:first-of-type {
+			margin-bottom: calc(var(--offset) * 2);
+
+			@media (max-width: 999px) {
+				margin: 0;
+			}
+		}
 		&-desc {
 			width: 40%;
 			& svg {
@@ -1246,13 +1282,14 @@
 	display: flex;
 	background-color: var(--color-bg-secondary);
 	align-items: flex-end;
-	padding-bottom: calc(var(--offset) * 10);
+	padding-bottom: calc(var(--offset) * 6);
 	@media (max-width: 999px) {
-		margin-top: calc(var(--offset) * 20);
+		margin-top: calc(var(--offset) * 10);
 		text-align: center;
 		&__cards {
 			display: flex;
 			flex-direction: column;
+			gap: var(--offset);
 			height: calc(var(--offset) * 35);
 		}
 		&__card {
@@ -1294,12 +1331,12 @@
 		height: calc(var(--offset) * 25);
 	}
 	&__card {
-		box-shadow: 0 0 24px 1px rgba(0, 0, 0, 0.03);
+		box-shadow: 0 0 var(--offset) 1px rgba(0, 0, 0, 0.03);
 		background-color: white;
-		border-radius: 30px;
 		padding: calc(var(--offset) * 1.5);
 		width: 32%;
-		border-radius: 20px;
+		border-radius: var(--offset);
+		cursor: pointer;
 		transition: all 0.2s ease;
 		& svg {
 			width: calc(var(--offset) * 2);
@@ -1440,8 +1477,10 @@
 .projects {
 	margin-top: calc(var(--offset) * 4);
 	margin-bottom: calc(var(--offset) * 5);
+	min-height: 100vh;
 	@media (max-width: 999px) {
 		text-align: center;
+		margin-bottom: calc(var(--offset) * 3);
 		&__tabs {
 			flex-direction: column;
 			align-items: center;
@@ -1525,7 +1564,8 @@
 			}
 			& img {
 				width: 100%;
-				object-fit: fill;
+				height: 100%;
+				object-fit: cover;
 			}
 		}
 		&__desc {
@@ -1562,6 +1602,7 @@
 	margin-top: calc(var(--offset) * 4);
 	@media (max-width: 999px) {
 		text-align: center;
+		margin-top: 0;
 		&__inner {
 			display: flex;
 			justify-content: space-between;
@@ -1616,6 +1657,7 @@
 	background-color: var(--color-bg-secondary);
 	margin-top: calc(var(--offset) * 4);
 	@media (max-width: 999px) {
+		margin-top: 0;
 		&__container {
 			display: none;
 		}
@@ -1631,7 +1673,8 @@
 				width: 100%;
 				align-items: center;
 				& input {
-					width: calc(var(--offset) * 25);
+					width: 100%;
+					// width: calc(var(--offset) * 25);
 				}
 			}
 			&-details {
@@ -1649,7 +1692,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: calc(var(--offset) * 3.8);
-		padding: var(--offset-xl);
+		padding: var(--offset-grid) var(--offset-xl);
 		width: 100%;
 
 		@media (max-width: 1280px) {
@@ -1683,6 +1726,13 @@
 			align-items: center;
 			font-weight: 700;
 			gap: calc(var(--offset) * 2);
+
+			li a {
+				transition: 0.5s color;
+				&:hover {
+					color: var(--color-text-secondary);
+				}
+			}
 		}
 	}
 	&__bottom {
@@ -1695,7 +1745,7 @@
 			width: 20%;
 			display: flex;
 			justify-content: space-around;
-			& div {
+			& a {
 				width: calc(var(--offset) * 3);
 				height: calc(var(--offset) * 3);
 				display: flex;
@@ -1703,8 +1753,13 @@
 				align-items: center;
 				margin-right: var(--offset);
 				background-color: white;
-				border-radius: 25px;
-				border: 1px solid #fff;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: 0.5s box-shadow;
+
+				&:hover {
+					box-shadow: 0 0 0 0.05em var(--color-bg-dark-blue);
+				}
 			}
 			& svg {
 				width: calc(var(--offset));
@@ -1744,7 +1799,7 @@
 		display: flex;
 		align-items: center;
 		height: calc(100% + var(--offset) * 3);
-		border-radius: 50% 0 0 0;
+		border-radius: 35% 0 0 0;
 		right: 0;
 		bottom: 0;
 		&-container {
@@ -1754,7 +1809,7 @@
 			padding: var(--offset-xl);
 			padding-left: calc(var(--offset-xl) * 1.2);
 			padding-right: calc(var(--offset-xl));
-			padding-bottom: calc(var(--offset-xl) * 0.2);
+			padding-bottom: calc(var(--offset-xl) * 0.6);
 			width: 100%;
 
 			@media (max-width: 1280px) {
@@ -1765,12 +1820,16 @@
 			}
 
 			@media (max-width: 480px) {
-				padding: calc(var(--offset) * 3);
+				padding: calc(var(--offset) * 1.5);
 			}
 		}
 		& h1 {
 			font-size: calc(var(--offset) * 1.5);
 			color: white;
+
+			@media (max-width: 999px) {
+				font-size: calc(var(--offset) * 1);
+			}
 		}
 		& p {
 			font-weight: 400;
@@ -1787,6 +1846,7 @@
 			background-color: #068dd9;
 			box-shadow: none;
 			border: none;
+			color: #fff;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 			padding-bottom: calc(var(--offset) * 0.5);
 
@@ -1804,6 +1864,12 @@
 			color: var(--color-bg-dark-blue);
 			border: none;
 			box-shadow: none;
+
+			&:hover {
+				color: #fff;
+				box-shadow: 0 0 0 0.05em #fff;
+				background-color: #068dd9;
+			}
 		}
 		&-details {
 			display: none;
@@ -1842,4 +1908,20 @@
 			}
 		}
 	}
+}
+
+.pin-spacer {
+	margin: 0 !important;
+}
+
+.container-network {
+	@media (max-width: 999px) {
+		padding: 0 !important;
+	}
+}
+
+.header-container {
+	background-color: #fff;
+	position: fixed;
+	z-index: 5;
 }
