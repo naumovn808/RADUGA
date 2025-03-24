@@ -98,21 +98,21 @@ function network() {
 	}
 	ScrollTrigger.create({
 		trigger: networkSection,
-		start: "top top",
+		start: "top top	",
 		end: "bottom bottom",
 		pin: true,
 		invalidateOnRefresh: true,
 	});
 
 	cards.forEach((card, index) => {
-		gsap.set(card, { zIndex: cards.length - index });
+		gsap.set(card, { zIndex: cards.length });
 
 		gsap.to(card, {
 			y: index * -200,
 			scrollTrigger: {
 				trigger: card,
 				start: "top center+=100",
-				end: "top top+=40",
+				end: "top top+=100",
 				scrub: true,
 				invalidateOnRefresh: true,
 			},
