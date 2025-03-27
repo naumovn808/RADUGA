@@ -512,7 +512,7 @@
 				</span>
 			</button>
 
-			<a class="nav__logo" href="/" aria-label="ссылка на главную странницу">
+			<a class="nav__logo" href="./index.html" aria-label="ссылка на главную странницу">
 				<img src="./images/svg/logo.svg" alt="Логотип компании" width="70" height="56">
 				<span> Сеть магазинов, объединяющая русскоязычное сообщество в Корее </span>
 			</a>
@@ -545,38 +545,38 @@
 
 					<ul class="dropdown">
 						<li class="dropdown-item">
-							<a href="#" class="dropdown-link" aria-label="английский язык"> En </a>
+							<a href="./index-en.html" class="dropdown-link" aria-label="английский язык"> En </a>
 						</li>
 
 						<li class="dropdown-item">
-							<a href="#" class="dropdown-link" aria-label="корейский язык"> Kr </a>
+							<a href="./index-kr.html" class="dropdown-link" aria-label="корейский язык"> Kr </a>
 						</li>
 					</ul>
 				</details>
 			</div>
 
-			<a class="btn" href="#">Сотрудничать c нами</a>
+			<a class="btn" href="#form">Сотрудничать c нами</a>
 		</div>
 
 		<div class="nav__bottom">
 			<ul class="nav__bottom-list">
 				<li>
-					<a href="#">О Компании</a>
+					<a href="#about">О Компании</a>
 				</li>
 				<li>
-					<a href="#">Наша сеть</a>
+					<a href="#network">Наша сеть</a>
 				</li>
 				<li>
-					<a href="#">Инвестиции</a>
+					<a href="#investment">Инвестиции</a>
 				</li>
 				<li>
-					<a href="#">Проекты</a>
+					<a href="#projects">Проекты</a>
 				</li>
 				<li>
-					<a href="#">Новости</a>
+					<a href="#news">Новости</a>
 				</li>
 				<li>
-					<a href="#">Контакты</a>
+					<a href="#footer">Контакты</a>
 				</li>
 			</ul>
 
@@ -620,7 +620,7 @@
 	<div class="main-head__desc">
 		<h1 class="title">Сеть магазинов <span>«Радуга»</span></h1>
 		<p>объединяет не только людей, но и возможности.</p>
-		<button class="btn">Оставить заявку</button>
+		<a href="#form" class="btn">Оставить заявку</a>
 	</div>
 	<div class="main-head__image">
 		<picture>
@@ -636,6 +636,7 @@
 			<source srcset="./images/map-bg.avif">
 			<img src="./images/map-bg.avif" width="1952" height="992" alt="магазин радуга">
 		</picture>
+		
 	</div>
 	<div class="map-container">
 		<div class="map__desc">
@@ -652,7 +653,7 @@
 			<svg>
 				<use xlink:href="#map_big"></use>
 			</svg>
-			<img class="pin" data-pin="north" src="./images/svg/pin.svg" alt="Pin" width="50" height="70">
+			<img class="pin" data-pin="north" src="/images/svg/pin.svg" alt="Pin" width="50" height="70">
 			<img class="pin" data-pin="seoul" src="./images/svg/pin.svg" alt="Pin" width="50" height="70">
 			<img class="pin" data-pin="south" src="./images/svg/pin.svg" alt="Pin" width="50" height="70">
 			<img class="pin" data-pin="daegu" src="./images/svg/pin.svg" alt="Pin" width="50" height="70">
@@ -711,7 +712,7 @@
 		</div>
 	
 </section>
- <section class="about">
+ <section class="about" id="about">
 	<div class="about-container">
 		<div class="about__desc">
 			<h2>О компании</h2>
@@ -723,7 +724,7 @@
 					товарами
 				</p>
 			</div>
-			<button>Оставить заявку</button>
+			<a class="btn" href="#form">Оставить заявку</a>
 		</div>
 		<div class="about__cards">
 			<div class="about__card">
@@ -756,7 +757,7 @@
 					и рефакторингу.
 				</p>
 			</div>
-			<button>Оставить заявку</button>
+			<a class="btn" href="#form">Оставить заявку</a>
 		</div>
 	</div>
 </section>
@@ -797,7 +798,7 @@
 	</div>
 </section>
 </div>
-			<div class="container container-network"><section class="network">
+			<div class="container container-network"><section class="network" id="network">
 	<h1 class="section-title">Наша сеть</h1>
 	<div class="network__cards">
 		<div class="network__card">
@@ -845,7 +846,7 @@
 	</div>
 </section>
 </div>
-			<section class="investments">
+			<section class="investments" id="investments">
 	<div class="investments__image">
 		<picture>
 			<source srcset="./images/map-bg.avif">
@@ -950,7 +951,7 @@
 	</div>
 </section>
 
-		<div class="container"><section class="projects">
+		<div class="container"><section class="projects" id="projects">
 	<h2>Проекты</h2>
 	<h1>Текущие инициативы</h1>
 	<div class="projects__tabs">
@@ -989,11 +990,11 @@
 	<div class="join__desc">
 		<h1>Присоединяйтесь к нашей сети и станьте частью успешного бизнеса!</h1>
 		<p>Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время.</p>
-		<button class="btn">Оставьте заявку</button>
+		<a href="#form" class="btn">Оставьте заявку</a>
 	</div>
 </section>
 
-			<div class="container"><section class="news">
+			<div class="container"><section class="news" id="news">
 	<h2>Новости</h2>
 	<h1>Последние события</h1>
 	<div class="news__inner">
@@ -1018,7 +1019,7 @@
 </section>
 </div>
 		</main>
-		 <footer class="footer">
+		 <footer class="footer" id="footer">
 	<div class="footer__container">
 		<div class="footer__top">
 			<a href="/" class="footer__top-image">
@@ -1026,22 +1027,22 @@
 			</a>
 			<ul>
 				<li>
-					<a href="#L">О Компании</a>
+					<a href="#about">О Компании</a>
 				</li>
 				<li>
-					<a href="#L">Наша сеть</a>
+					<a href="#network">Наша сеть</a>
 				</li>
 				<li>
-					<a href="#L">Инвестиции</a>
+					<a href="#investment">Инвестиции</a>
 				</li>
 				<li>
-					<a href="#L">Проекты</a>
+					<a href="#projects">Проекты</a>
 				</li>
 				<li>
-					<a href="#L">Новости</a>
+					<a href="#news">Новости</a>
 				</li>
 				<li>
-					<a href="#L">Контакты</a>
+					<a href="#contacts">Контакты</a>
 				</li>
 			</ul>
 		</div>
@@ -1085,11 +1086,11 @@
 		<div class="footer__form-container">
 			<h1>Остались вопросы?</h1>
 			<p>Заполните форму обратной связи, и наш менеджер свяжется с вами.</p>
-			<form action="/">
-				<input type="text" placeholder="Ваше имя">
-				<input type="text" placeholder="Ваш e-mail">
-				<input type="text" placeholder="Комментарий">
-				<button class="btn">Отправить</button>
+			<form action="/contact.php" method="post" id="form">
+				<input type="text" placeholder="Ваше имя" name="name">
+				<input type="text" placeholder="Ваш e-mail" name="email">
+				<input type="text" placeholder="Комментарий" name="comment">
+				<button type="submit" class="btn">Отправить</button>
 			</form>
 			<div class="footer__form-details">
 				<p>Контакты:</p>
@@ -1116,6 +1117,7 @@
 		</div>
 	</div>
 </footer>
+
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
