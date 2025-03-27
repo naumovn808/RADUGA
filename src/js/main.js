@@ -33,6 +33,14 @@ async function init() {
 	if (document.querySelector(".nav__btn")) {
 		const menuBtn = document.querySelector(".nav__btn");
 		const navMenu = document.querySelector(".nav__bottom");
+		const navList = document.querySelectorAll('.nav__bottom-list li a');
+
+		if (navList) {
+			navList.forEach(e => e.addEventListener('click', (e) => {
+				body.classList.toggle("open");
+				navMenu.classList.toggle("open");
+			}))
+		}
 
 		const body = document.querySelector("body");
 
@@ -81,7 +89,6 @@ function map() {
 }
 
 function about() {
-	console.log("hi");
 	document.querySelectorAll(".about__card").forEach((card, index) => {
 		setTimeout(() => {
 			card.classList.add("active");
