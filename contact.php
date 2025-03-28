@@ -14,8 +14,8 @@ if (empty($name) || !check_length($name, 2, 50)) {
   $errors['name'] = 'Введите корректное имя (2-50 символов).';
 }
 
-if (empty($email) || !check_length($email, 9, 50)) {
-  $errors['email'] = 'Введите корректный email';
+if (empty($email) || !check_length($email, 9, 50) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors['email'] = 'Введите корректный email';
 }
 
 if (!empty($errors)) {
