@@ -945,6 +945,8 @@
 
 			@media (max-width: 480px) {
 				text-align: center;
+				display: flex;
+				flex-direction: column;
 			}
 			& div {
 				flex-direction: column-reverse;
@@ -955,6 +957,13 @@
 
 			& p {
 				margin-top: 0;
+			}
+
+			& a {
+				@media (max-width: 480px) {
+					text-align: center;
+					margin: 0 auto;
+				}
 			}
 		}
 		&__cards {
@@ -1812,7 +1821,8 @@
 				& a {
 					transition-duration: 0.5s;
 					transition-property: color;
-					&:hover, &:focus {
+					&:hover,
+					&:focus {
 						color: var(--color-text-secondary);
 					}
 				}
