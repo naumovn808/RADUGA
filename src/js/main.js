@@ -33,13 +33,15 @@ async function init() {
 	if (document.querySelector(".nav__btn")) {
 		const menuBtn = document.querySelector(".nav__btn");
 		const navMenu = document.querySelector(".nav__bottom");
-		const navList = document.querySelectorAll('.nav__bottom-list li a');
+		const navList = document.querySelectorAll(".nav__bottom-list li a");
 
 		if (navList) {
-			navList.forEach(e => e.addEventListener('click', (e) => {
-				body.classList.toggle("open");
-				navMenu.classList.toggle("open");
-			}))
+			navList.forEach((e) =>
+				e.addEventListener("click", (e) => {
+					body.classList.toggle("open");
+					navMenu.classList.toggle("open");
+				})
+			);
 		}
 
 		const body = document.querySelector("body");
