@@ -611,6 +611,7 @@
 
 		@media (max-width: 1280px) {
 			padding: 0 calc(var(--offset) * 2);
+			height: calc(var(--vh) * 100);
 		}
 
 		@media (max-width: 480px) {
@@ -1807,6 +1808,14 @@
 			}
 			p {
 				font-size: calc(var(--offset) * 0.8);
+
+				& a {
+					transition-duration: 0.5s;
+					transition-property: color;
+					&:hover, &:focus {
+						color: var(--color-text-secondary);
+					}
+				}
 			}
 		}
 		&-contacts {
@@ -1967,5 +1976,44 @@
 .join__desc .btn {
 	@media (max-width: 999px) {
 		margin: 0 auto;
+	}
+}
+
+.page-404 {
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__about {
+		max-width: 60vw;
+		position: absolute;
+		left: 50%;
+		width: 100%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media (max-width: 999px) {
+			max-width: 100vw;
+			padding: 0 var(--offset);
+		}
+
+		& h3 {
+			font-size: 50px;
+		}
+	}
+}
+
+.page-404-wrapp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& p {
+		text-align: center;
 	}
 }
