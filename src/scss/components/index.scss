@@ -1205,7 +1205,9 @@
 	}
 }
 .network {
+	position: relative;
 	margin-bottom: calc(var(--offset) * 10);
+	z-index: -1;
 	@media (max-width: 999px) {
 		margin-bottom: 0;
 		&__cards {
@@ -1247,6 +1249,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		z-index: -1;
 	}
 	&__card {
 		width: 100%;
@@ -1973,6 +1976,7 @@
 }
 
 .projects__tabs {
+	gap: var(--offset);
 	@media (max-width: 480px) {
 		margin-bottom: var(--offset);
 	}
