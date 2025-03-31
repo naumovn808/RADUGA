@@ -71,7 +71,7 @@ function map() {
 			const pinId = pin.getAttribute("data-pin");
 			const desc = document.querySelector(`.desc.${pinId}`);
 			const slice = document.querySelectorAll(`.map-slice.${pinId}`);
-			console.log(slice);
+
 			if (desc) {
 				desc.classList.add("active");
 				slice.forEach((item) => item.classList.add("active"));
@@ -223,7 +223,7 @@ function project() {
 			<h1>Tab-2 title</h1>
 		</div>`,
 	};
-	const currentLang = document.location.pathname.split("-")[1].split(".")[0];
+	const currentLang = document.location.pathname.split("-")[1]?.split(".")[0];
 	tabs.forEach((tab) => {
 		tab.addEventListener("click", () => {
 			const target = tab.dataset.tab;
