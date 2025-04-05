@@ -1013,25 +1013,31 @@ template {
   height: calc(max(calc(1.25 * 1vw), 15px) * 3.5);
   height: calc(var(--offset) * 3.5);
 }
-.pin[data-pin=north] {
-  right: 30%;
-  top: 35%;
+.pin[data-pin=asana] {
+  right: 46%;
+  top: 39.8%;
 }
-.pin[data-pin=seoul] {
-  right: 42%;
-  top: 20%;
+.pin[data-pin=hvason] {
+  width: calc(max(calc(1.25 * 1vw), 15px) * 2.2);
+  width: calc(var(--offset) * 2.2);
+  right: 43%;
+  top: 27%;
 }
-.pin[data-pin=south] {
-  right: 50%;
-  top: 40%;
+.pin[data-pin=anson] {
+  width: calc(max(calc(1.25 * 1vw), 15px) * 2.2);
+  width: calc(var(--offset) * 2.2);
+  right: 38%;
+  top: 30%;
 }
-.pin[data-pin=daegu] {
-  right: 20%;
-  top: 40%;
+.pin[data-pin=phentek] {
+  width: calc(max(calc(1.25 * 1vw), 15px) * 2);
+  width: calc(var(--offset) * 2);
+  right: 47%;
+  top: 32%;
 }
-.pin[data-pin=jeolla] {
+.pin[data-pin=kvandju] {
   right: 48%;
-  top: 70%;
+  top: 60%;
 }
 .pin:hover {
   -webkit-transform: scale(1.05);
@@ -1045,6 +1051,8 @@ template {
   min-width: 30vw;
   max-width: 30vw;
   position: absolute;
+  top: 20%;
+  left: -25%;
   z-index: 10;
   opacity: 0;
   pointer-events: none;
@@ -1072,44 +1080,6 @@ template {
   line-height: 135%;
   color: #848487;
   color: var(--color-text-secondary);
-}
-.desc .triangle {
-  height: 20px;
-  width: 20px;
-  background-color: inherit;
-  border: inherit;
-  position: absolute;
-  right: 10px;
-  bottom: -5px;
-  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  border-radius: 0 0 0 0.25em;
-}
-.desc .close-btn {
-  width: 100%;
-  text-align: right;
-}
-.desc.north {
-  left: 8%;
-  top: 4%;
-}
-.desc.seoul {
-  left: -4%;
-  top: -11%;
-}
-.desc.south {
-  left: -12%;
-  top: 8%;
-}
-.desc.daegu {
-  right: 22%;
-  top: 8%;
-}
-.desc.jeolla {
-  left: -10%;
-  top: 38%;
 }
 .desc.active {
   opacity: 1;
@@ -1386,8 +1356,10 @@ template {
 }
 
 .network {
+  position: relative;
   margin-bottom: calc(max(calc(1.25 * 1vw), 15px) * 10);
   margin-bottom: calc(var(--offset) * 10);
+  z-index: -1;
 }
 .network__cards {
   position: relative;
@@ -1398,6 +1370,7 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: -1;
 }
 .network__card {
   width: 100%;
@@ -2217,7 +2190,12 @@ template {
 .header-container {
   background-color: #fff;
   position: fixed;
-  z-index: 5;
+  z-index: 15;
+}
+
+.projects__tabs {
+  gap: max(calc(1.25 * 1vw), 15px);
+  gap: var(--offset);
 }
 
 .projects__tabs .btn {
@@ -2508,10 +2486,11 @@ html {
     padding: 0 calc(var(--offset) * 2);
     height: calc(var(--vh) * 100);
   }
-  .pin[data-pin=north] {
-    right: 35%;
+  .pin[data-pin=asana] {
+    right: 50%;
+    top: 42%;
   }
-  .pin[data-pin=seoul] {
+  .pin[data-pin=hvason] {
     right: 48%;
   }
   .desc.north {
@@ -2755,29 +2734,44 @@ html {
   .map__map svg {
     position: static;
   }
-  .pin[data-pin=north] {
-    left: 48%;
-    top: 26%;
+  .pin[data-pin=asana] {
+    width: calc(max(calc(1.25 * 1vw), 15px) * 2.3);
+    width: calc(var(--offset) * 2.3);
+    right: 60%;
+    top: 32%;
   }
-  .pin[data-pin=seoul] {
-    left: 40%;
-    top: 15%;
+  .pin[data-pin=hvason] {
+    width: calc(max(calc(1.25 * 1vw), 15px) * 2);
+    width: calc(var(--offset) * 2);
+    right: 55%;
+    top: 16%;
   }
-  .pin[data-pin=south] {
-    left: 35%;
-    top: 33%;
+  .pin[data-pin=anson] {
+    width: calc(max(calc(1.25 * 1vw), 15px) * 2);
+    width: calc(var(--offset) * 2);
+    right: 51%;
+    top: 20%;
   }
-  .pin[data-pin=daegu] {
-    left: 58%;
-    top: 35%;
+  .pin[data-pin=phentek] {
+    width: calc(max(calc(1.25 * 1vw), 15px) * 2);
+    width: calc(var(--offset) * 2);
+    right: 57.5%;
+    top: 21%;
   }
-  .pin[data-pin=jeolla] {
-    left: 37%;
-    top: 60%;
+  .pin[data-pin=kvandju] {
+    width: calc(max(calc(1.25 * 1vw), 15px) * 2.3);
+    width: calc(var(--offset) * 2.3);
+    right: 58%;
+    top: 50%;
   }
   .desc {
     width: 100%;
     max-width: 80vw;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   .desc .triangle {
     display: none;
@@ -2929,6 +2923,9 @@ html {
   .investments__card {
     width: 100%;
     text-align: left;
+  }
+  .investments__image img {
+    display: none;
   }
   .cooperation h1 {
     text-align: center;
@@ -3089,6 +3086,10 @@ html {
   .container-network {
     padding: 0 !important;
   }
+  .container-network {
+    position: relative;
+    z-index: 1;
+  }
   .join__desc .btn {
     margin: 0 auto;
   }
@@ -3100,6 +3101,28 @@ html {
   main {
     padding-top: calc(max(calc(1.25 * 1vw), 15px) * 7);
     padding-top: calc(var(--offset) * 7);
+  }
+}
+
+@media (max-width: 880px) {
+  .pin[data-pin=phentek] {
+    right: 58%;
+    top: 21%;
+  }
+}
+
+@media (max-width: 780px) {
+  .pin[data-pin=kvandju] {
+    right: 60%;
+    top: 50%;
+  }
+  .pin[data-pin=anson] {
+    right: 51%;
+    top: 20%;
+  }
+  .pin[data-pin=phentek] {
+    right: 59%;
+    top: 21%;
   }
 }
 
@@ -3119,25 +3142,28 @@ html {
     margin-top: calc(max(calc(1.25 * 1vw), 15px) * -33);
     margin-top: calc(var(--offset) * -33);
   }
-  .pin[data-pin=north] {
-    left: 48%;
-    top: 26%;
+}
+
+@media (max-width: 650px) {
+  .pin[data-pin=kvandju] {
+    right: 62%;
+    top: 50%;
   }
-  .pin[data-pin=seoul] {
-    left: 35%;
-    top: 15%;
+  .pin[data-pin=anson] {
+    right: 51%;
+    top: 20%;
   }
-  .pin[data-pin=south] {
-    left: 32%;
-    top: 33%;
+  .pin[data-pin=hvason] {
+    right: 56%;
+    top: 16%;
   }
-  .pin[data-pin=daegu] {
-    left: 58%;
+  .pin[data-pin=phentek] {
+    right: 61%;
+    top: 21%;
+  }
+  .pin[data-pin=asana] {
+    right: 65%;
     top: 35%;
-  }
-  .pin[data-pin=jeolla] {
-    left: 32%;
-    top: 60%;
   }
 }
 
@@ -3149,6 +3175,21 @@ html {
   .title {
     font-size: calc(max(calc(1 * 1vw), 15px) * 3);
     font-size: calc(var(--fz) * 3);
+  }
+}
+
+@media (max-width: 550px) {
+  .pin[data-pin=kvandju] {
+    right: 64%;
+    top: 50%;
+  }
+  .pin[data-pin=hvason] {
+    right: 57%;
+    top: 16%;
+  }
+  .pin[data-pin=phentek] {
+    right: 62.7%;
+    top: 21%;
   }
 }
 
@@ -3191,26 +3232,6 @@ html {
   .map-container {
     padding: 0 max(calc(1.25 * 1vw), 15px);
     padding: 0 var(--offset);
-  }
-  .pin[data-pin=north] {
-    left: 48%;
-    top: 26%;
-  }
-  .pin[data-pin=seoul] {
-    left: 30%;
-    top: 15%;
-  }
-  .pin[data-pin=south] {
-    left: 25%;
-    top: 33%;
-  }
-  .pin[data-pin=daegu] {
-    left: 65%;
-    top: 35%;
-  }
-  .pin[data-pin=jeolla] {
-    left: 25%;
-    top: 60%;
   }
   .desc {
     max-width: 96vw;
@@ -3270,32 +3291,32 @@ html {
   }
 }
 
-@media (max-width: 408px) {
-  .map__desc p {
-    text-align: left;
+@media (max-width: 450px) {
+  .pin[data-pin=kvandju] {
+    right: 60%;
+    top: 48%;
+  }
+  .pin[data-pin=anson] {
+    right: 51%;
+    top: 26%;
+  }
+  .pin[data-pin=hvason] {
+    right: 58%;
+    top: 20%;
+  }
+  .pin[data-pin=phentek] {
+    right: 64%;
+    top: 25%;
+  }
+  .pin[data-pin=asana] {
+    right: 65%;
+    top: 35%;
   }
 }
 
-@media (max-width: 400px) {
-  .pin[data-pin=north] {
-    left: 48%;
-    top: 30%;
-  }
-  .pin[data-pin=seoul] {
-    left: 30%;
-    top: 18%;
-  }
-  .pin[data-pin=south] {
-    left: 25%;
-    top: 35%;
-  }
-  .pin[data-pin=daegu] {
-    left: 65%;
-    top: 35%;
-  }
-  .pin[data-pin=jeolla] {
-    left: 25%;
-    top: 60%;
+@media (max-width: 408px) {
+  .map__desc p {
+    text-align: left;
   }
 }
 
