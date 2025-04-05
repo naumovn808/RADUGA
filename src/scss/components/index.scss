@@ -723,94 +723,126 @@
 	}
 
 	@media (max-width: 999px) {
-		&[data-pin="north"] {
-			left: 48%;
-			top: 26%;
+		&[data-pin="asana"] {
+			width: calc(var(--offset) * 2.3);
+			right: 56%;
+			top: 29%;
 		}
-		&[data-pin="seoul"] {
-			left: 40%;
-			top: 15%;
+		&[data-pin="hvason"] {
+			width: calc(var(--offset) * 2);
+			right: 55%;
+			top: 16%;
 		}
-		&[data-pin="south"] {
-			left: 35%;
-			top: 33%;
+		&[data-pin="anson"] {
+			width: calc(var(--offset) * 2);
+
+			right: 51%;
+			top: 20%;
 		}
-		&[data-pin="daegu"] {
-			left: 58%;
-			top: 35%;
+		&[data-pin="phentek"] {
+			width: calc(var(--offset) * 2);
+			right: 57.5%;
+			top: 21%;
 		}
-		&[data-pin="jeolla"] {
-			left: 37%;
-			top: 60%;
+		&[data-pin="kvandju"] {
+			width: calc(var(--offset) * 2.3);
+			right: 58%;
+			top: 50%;
 		}
 	}
 
-	@media (max-width: 680px) {
-		&[data-pin="north"] {
-			left: 48%;
-			top: 26%;
+	@media (max-width: 880px) {
+		// &[data-pin="asana"] {
+		// 	width: calc(var(--offset) * 2.3);
+		// 	right: 56%;
+		// 	top: 29%;
+		// }
+		// &[data-pin="anson"] {
+		// 	right: 51%;
+		// 	top: 20%;
+		// }
+		&[data-pin="phentek"] {
+			right: 58%;
+			top: 21%;
 		}
-		&[data-pin="seoul"] {
-			left: 35%;
-			top: 15%;
+		// &[data-pin="kvandju"] {
+		// 	width: calc(var(--offset) * 2.3);
+		// 	right: 59%;
+		// 	top: 50%;
+		// }
+	}
+
+	@media (max-width: 780px) {
+		&[data-pin="kvandju"] {
+			right: 60%;
+			top: 50%;
 		}
-		&[data-pin="south"] {
-			left: 32%;
-			top: 33%;
+		&[data-pin="anson"] {
+			right: 51%;
+			top: 20%;
 		}
-		&[data-pin="daegu"] {
-			left: 58%;
-			top: 35%;
-		}
-		&[data-pin="jeolla"] {
-			left: 32%;
-			top: 60%;
+		&[data-pin="phentek"] {
+			right: 59%;
+			top: 21%;
 		}
 	}
 
-	@media (max-width: 480px) {
-		&[data-pin="north"] {
-			left: 48%;
-			top: 26%;
+	@media (max-width: 650px) {
+		&[data-pin="kvandju"] {
+			right: 62%;
+			top: 50%;
 		}
-		&[data-pin="seoul"] {
-			left: 30%;
-			top: 15%;
+		&[data-pin="anson"] {
+			right: 51%;
+			top: 20%;
 		}
-		&[data-pin="south"] {
-			left: 25%;
-			top: 33%;
+		&[data-pin="hvason"] {
+			right: 56%;
+			top: 16%;
 		}
-		&[data-pin="daegu"] {
-			left: 65%;
-			top: 35%;
+		&[data-pin="phentek"] {
+			right: 61%;
+			top: 21%;
 		}
-		&[data-pin="jeolla"] {
-			left: 25%;
-			top: 60%;
+		&[data-pin="asana"] {
+			right: 58%;
+			top: 29%;
 		}
 	}
-
-	@media (max-width: 400px) {
-		&[data-pin="north"] {
-			left: 48%;
-			top: 30%;
+	@media (max-width: 550px) {
+		&[data-pin="kvandju"] {
+			right: 64%;
+			top: 50%;
 		}
-		&[data-pin="seoul"] {
-			left: 30%;
-			top: 18%;
+		&[data-pin="hvason"] {
+			right: 57%;
+			top: 16%;
 		}
-		&[data-pin="south"] {
-			left: 25%;
-			top: 35%;
+		&[data-pin="phentek"] {
+			right: 62.7%;
+			top: 21%;
 		}
-		&[data-pin="daegu"] {
-			left: 65%;
-			top: 35%;
+	}
+	@media (max-width: 450px) {
+		&[data-pin="kvandju"] {
+			right: 67%;
+			top: 50%;
 		}
-		&[data-pin="jeolla"] {
-			left: 25%;
-			top: 60%;
+		&[data-pin="anson"] {
+			right: 51%;
+			top: 20%;
+		}
+		&[data-pin="hvason"] {
+			right: 58%;
+			top: 16%;
+		}
+		&[data-pin="phentek"] {
+			right: 64%;
+			top: 20%;
+		}
+		&[data-pin="asana"] {
+			right: 59%;
+			top: 29%;
 		}
 	}
 
@@ -832,11 +864,6 @@
 	border-radius: 10px;
 	transition-duration: 0.5s;
 	transition-property: opacity;
-
-	// @media (max-width: 999px) {
-	// 	min-width: 50vw;
-	// 	max-width: 50vw;
-	// }
 
 	@media (max-width: 1280px) {
 		&.north {
@@ -864,6 +891,9 @@
 	@media (max-width: 999px) {
 		width: 100%;
 		max-width: 80vw;
+		top: 10%;
+		left: 50%;
+		transform: translateX(-50%);
 		.triangle {
 			display: none;
 		}
