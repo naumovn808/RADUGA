@@ -762,6 +762,7 @@ template {
   gap: 0.5em;
   position: absolute;
   z-index: 10;
+  background-color: #fff;
   top: calc(max(calc(1.25 * 1vw), 15px) * 2.5);
   top: calc(var(--offset) * 2.5);
   left: 50%;
