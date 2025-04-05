@@ -693,13 +693,14 @@
 		top: 39.8%;
 
 		@media (max-width: 1280px) {
-			right: 35%;
+			right: 50%;
+			top: 42%;
 		}
 	}
 	&[data-pin="hvason"] {
 		width: calc(var(--offset) * 2.2);
 
-		right: 45%;
+		right: 43%;
 		top: 27%;
 
 		@media (max-width: 1280px) {
@@ -714,7 +715,7 @@
 	}
 	&[data-pin="phentek"] {
 		width: calc(var(--offset) * 2);
-		right: 49%;
+		right: 47%;
 		top: 32%;
 	}
 	&[data-pin="kvandju"] {
@@ -725,8 +726,8 @@
 	@media (max-width: 999px) {
 		&[data-pin="asana"] {
 			width: calc(var(--offset) * 2.3);
-			right: 56%;
-			top: 29%;
+			right: 60%;
+			top: 32%;
 		}
 		&[data-pin="hvason"] {
 			width: calc(var(--offset) * 2);
@@ -805,8 +806,8 @@
 			top: 21%;
 		}
 		&[data-pin="asana"] {
-			right: 58%;
-			top: 29%;
+			right: 65%;
+			top: 35%;
 		}
 	}
 	@media (max-width: 550px) {
@@ -825,24 +826,24 @@
 	}
 	@media (max-width: 450px) {
 		&[data-pin="kvandju"] {
-			right: 67%;
-			top: 50%;
+			right: 60%;
+			top: 48%;
 		}
 		&[data-pin="anson"] {
 			right: 51%;
-			top: 20%;
+			top: 26%;
 		}
 		&[data-pin="hvason"] {
 			right: 58%;
-			top: 16%;
+			top: 20%;
 		}
 		&[data-pin="phentek"] {
 			right: 64%;
-			top: 20%;
+			top: 25%;
 		}
 		&[data-pin="asana"] {
-			right: 59%;
-			top: 29%;
+			right: 65%;
+			top: 35%;
 		}
 	}
 
@@ -1375,6 +1376,10 @@
 
 			@media (max-width: 1280px) {
 				object-fit: cover;
+			}
+
+			@media (max-width: 999px) {
+				display: none;
 			}
 		}
 	}
@@ -1999,13 +2004,15 @@
 .container-network {
 	@media (max-width: 999px) {
 		padding: 0 !important;
+		position: relative;
+		z-index: 1;
 	}
 }
 
 .header-container {
 	background-color: #fff;
 	position: fixed;
-	z-index: 5;
+	z-index: 15;
 }
 
 .projects__tabs {
