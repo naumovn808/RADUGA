@@ -195,33 +195,33 @@ function project() {
 	};
 	const tabsContentEN = {
 		1: `<div class="projects__tabs-card">
-			<picture>
-				<source srcset="./images/project-1.avif" />
-				<img src="./images/project-1.png" alt="Project 1" />
-			</picture>
-			<h1>Запуск приложения для доставки продуктов (релиз в 2025 году)</h1>
-		</div>
-		<div class="projects__tabs-card">
-			<picture>
-				<source srcset="./images/project-2.avif" />
-				<img src="./images/project-2.png" alt="Project 1" />
-			</picture>
-			<h1>Открытие гипермаркета в городе Асан с площадью 1000 м²</h1>
-		</div>`,
+							<picture>
+								<source srcset="./images/project-1.avif" />
+								<img src="./images/project-1.png" alt="Project 1" />
+							</picture>
+							<h1>Launch of the Grocery Delivery App (release in 2025)</h1>
+						</div>
+						<div class="projects__tabs-card">
+							<picture>
+								<source srcset="./images/project-2.avif" />
+								<img src="./images/project-2.png" alt="Project 1" />
+							</picture>
+							<h1>Opening of a Hypermarket in Asan with an area of 1000 m²</h1>
+						</div>`,
 		2: `<div class="projects__tabs-card">
-			<picture>
-				<source srcset="./images/project-2.avif" />
-				<img src="./images/project-2.png" alt="Project 1" />
-			</picture>
-			<h1>Tab-2 title</h1>
-		</div>
-		<div class="projects__tabs-card">
-			<picture>
-				<source srcset="./images/project-1.avif" />
-				<img src="./images/project-1.png" alt="Project 1" />
-			</picture>
-			<h1>Tab-2 title</h1>
-		</div>`,
+							<picture>
+								<source srcset="./images/project-2.avif" />
+								<img src="./images/project-2.png" alt="Project 1" />
+							</picture>
+							<h1>Opening of a Hypermarket in Asan with an area of 1000 m²</h1>
+						</div>
+						<div class="projects__tabs-card">
+							<picture>
+								<source srcset="./images/project-1.avif" />
+								<img src="./images/project-1.png" alt="Project 1" />
+							</picture>
+							<h1>Launch of the Grocery Delivery App (release in 2025)</h1>
+						</div>`,
 	};
 	const currentLang = document.location.pathname.split("-")[1]?.split(".")[0];
 	tabs.forEach((tab) => {
