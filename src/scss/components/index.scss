@@ -834,15 +834,15 @@
 		}
 		&[data-pin="anson"] {
 			right: 51%;
-			top: 26%;
+			top: 22%;
 		}
 		&[data-pin="hvason"] {
 			right: 58%;
-			top: 20%;
+			top: 17%;
 		}
 		&[data-pin="phentek"] {
 			right: 64%;
-			top: 25%;
+			top: 22%;
 		}
 		&[data-pin="asana"] {
 			right: 65%;
@@ -1256,6 +1256,7 @@
 			scroll-snap-type: x mandatory;
 			-webkit-overflow-scrolling: touch;
 			gap: 0;
+			padding:  1em;
 		}
 		&__card {
 			width: 70%;
@@ -1263,8 +1264,11 @@
 			flex-direction: column;
 			box-shadow: 0 0 1em 0.03em rgba(0, 0, 0, 0.12);
 			padding: calc(var(--offset));
-			margin: 1em 0 1em 1em !important;
 			scroll-snap-align: center;
+
+			&:not(:last-of-type) {
+				margin-right:  1em !important;
+			}
 			&-image {
 				width: 100%;
 				height: 50%;
@@ -1302,9 +1306,6 @@
 			padding-top: calc(var(--offset) * 1.5);
 		}
 
-		&:last-of-type {
-			margin-right: 1em !important;
-		}
 		&:first-of-type {
 			margin-bottom: calc(var(--offset) * 2);
 
@@ -1957,10 +1958,13 @@
 			box-shadow: none;
 			border: none;
 			color: #fff;
+			border-radius: 0;
+			border: none;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 			padding-bottom: calc(var(--offset) * 0.5);
-
+			outline: none;
 			margin-bottom: calc(var(--offset));
+			font-size: var(--fz);
 
 			&.error {
 				border-bottom: 1px solid rgb(167, 10, 10);
@@ -1969,7 +1973,7 @@
 			&::placeholder {
 				font-weight: 500;
 				color: white;
-				font-size: calc(var(--fz) * 0.6);
+				font-size: var(--fz);
 				opacity: 0.5;
 			}
 		}
