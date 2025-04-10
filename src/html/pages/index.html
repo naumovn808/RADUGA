@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('../components/head.html', { 'title': '라두가' }) @@include('../components/sprite.html')
+	@@include('../components/head.html', { 'title': 'Радуга' }) @@include('../components/sprite.html')
 
 	<body>
 		<div class="container header-container">@@include('../components/header.html')</div>
@@ -15,6 +15,65 @@
 			<div class="container">@@include('../components/news.html')</div>
 		</main>
 		@@include('../components/footer.html')
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const form = document.getElementById("form");
+				const inputs = form.querySelectorAll("input");
+				const successBlocks = document.querySelectorAll(".success-desc");
+
+				form.addEventListener("submit", async (e) => {
+					e.preventDefault();
+
+					let hasError = false;
+					inputs.forEach((input) => {
+						input.classList.remove("error");
+						input.nextElementSibling?.classList.remove("visible");
+					});
+					successBlocks.forEach((block) => block.classList.remove("active"));
+
+					inputs.forEach((input) => {
+						const value = input.value.trim();
+						const name = input.name;
+
+						if (!value) {
+							input.classList.add("error");
+							input.nextElementSibling?.classList.add("visible");
+							hasError = true;
+						} else if (name === "email" && !validateEmail(value)) {
+							input.classList.add("error");
+							input.nextElementSibling.textContent = "format of the email is incorrect";
+							input.nextElementSibling.classList.add("visible");
+							hasError = true;
+						}
+					});
+
+					if (hasError) return;
+
+					try {
+						const formData = new FormData(form);
+						const response = await fetch(form.action, {
+							method: "POST",
+							body: formData,
+						});
+
+						if (response.ok) {
+							successBlocks[0]?.classList.add("active");
+							form.reset();
+						} else {
+							successBlocks[1]?.classList.add("active");
+						}
+					} catch (error) {
+						successBlocks[1]?.classList.add("active");
+					}
+				});
+
+				function validateEmail(email) {
+					const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+					return regex.test(email);
+				}
+			});
+		</script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
