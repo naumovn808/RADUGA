@@ -29,7 +29,7 @@
 	<meta name="theme-color" content="#F7F7F7">
 	<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 
-	<title>라두가</title>
+	<title>Радуга</title>
 
 	<link rel="preload" href="./fonts/Nunito-Black.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Bold.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Medium.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Regular.woff" as="font" type="font/woff" crossorigin="anonymous"><link rel="preload" href="./fonts/Nunito-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
@@ -1127,12 +1127,31 @@
 		<div class="footer__form-container">
 			<h1>Остались вопросы?</h1>
 			<p>Заполните форму обратной связи, и наш менеджер свяжется с вами.</p>
+
 			<form action="/contact.php" method="post" id="form">
-				<input type="text" placeholder="Ваше имя" name="name">
-				<input type="text" placeholder="Ваш e-mail" name="email">
-				<input type="text" placeholder="Комментарий" name="comment">
+				<label>
+					<input type="text" placeholder="Ваше имя" name="name">
+					<span>пожалуйста, заполните имя</span>
+				</label>
+				<label>
+					<input type="text" placeholder="Ваш e-mail" name="email">
+					<span>пожалуйста, заполните email</span>
+				</label>
+				<label>
+					<input type="text" placeholder="Комментарий" name="comment">
+					<span>пожалуйста, добавьте описание</span>
+				</label>
 				<button type="submit" class="btn">Отправить</button>
 			</form>
+
+			<div class="success-desc">
+				<b>Ваша заявка успешно отправлена!</b>
+			</div>
+
+			<div class="success-desc">
+				<b>Ошибка сети, попробйуте позже</b>
+			</div>
+
 			<div class="footer__form-details">
 				<p>Контакты:</p>
 				<h1>+8210 8272-8786</h1>
@@ -1159,6 +1178,65 @@
 	</div>
 </footer>
 
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const form = document.getElementById("form");
+				const inputs = form.querySelectorAll("input");
+				const successBlocks = document.querySelectorAll(".success-desc");
+
+				form.addEventListener("submit", async (e) => {
+					e.preventDefault();
+
+					let hasError = false;
+					inputs.forEach((input) => {
+						input.classList.remove("error");
+						input.nextElementSibling?.classList.remove("visible");
+					});
+					successBlocks.forEach((block) => block.classList.remove("active"));
+
+					inputs.forEach((input) => {
+						const value = input.value.trim();
+						const name = input.name;
+
+						if (!value) {
+							input.classList.add("error");
+							input.nextElementSibling?.classList.add("visible");
+							hasError = true;
+						} else if (name === "email" && !validateEmail(value)) {
+							input.classList.add("error");
+							input.nextElementSibling.textContent = "format of the email is incorrect";
+							input.nextElementSibling.classList.add("visible");
+							hasError = true;
+						}
+					});
+
+					if (hasError) return;
+
+					try {
+						const formData = new FormData(form);
+						const response = await fetch(form.action, {
+							method: "POST",
+							body: formData,
+						});
+
+						if (response.ok) {
+							successBlocks[0]?.classList.add("active");
+							form.reset();
+						} else {
+							successBlocks[1]?.classList.add("active");
+						}
+					} catch (error) {
+						successBlocks[1]?.classList.add("active");
+					}
+				});
+
+				function validateEmail(email) {
+					const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+					return regex.test(email);
+				}
+			});
+		</script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
