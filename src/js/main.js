@@ -117,7 +117,7 @@ function network() {
 		gsap.set(card, { zIndex: cards.length });
 
 		gsap.to(card, {
-			y: index * -200,
+			y: index * -300,
 			ease: "power1.out",
 			scrollTrigger: {
 				trigger: card,

@@ -454,7 +454,7 @@
 		min-height: 70vh;
 		gap: calc(var(--offset) * 2);
 		justify-content: space-between;
-		margin-bottom: calc(var(--offset) * 4);
+
 		@media (max-width: 999px) {
 			flex-direction: column-reverse;
 			align-items: center;
@@ -657,6 +657,7 @@
 		justify-content: center;
 		width: 100%;
 		height: 100%;
+		min-height: 80vh;
 		margin: auto 0;
 
 		@media (max-width: 999px) {
@@ -672,6 +673,10 @@
 
 			@media (max-width: 999px) {
 				position: static;
+			}
+
+			@media (max-width: 450px) {
+				transform: scale(1.2);
 			}
 		}
 	}
@@ -729,124 +734,98 @@
 	@media (max-width: 999px) {
 		&[data-pin="asana"] {
 			width: calc(var(--offset) * 2.3);
-			right: 60%;
+			right: 65%;
 			top: 32%;
 		}
 		&[data-pin="hvason"] {
 			width: calc(var(--offset) * 2);
-			right: 55%;
+			right: 65%;
 			top: 16%;
 		}
 		&[data-pin="anson"] {
 			width: calc(var(--offset) * 2);
 
-			right: 51%;
+			right: 60%;
 			top: 20%;
 		}
 		&[data-pin="phentek"] {
 			width: calc(var(--offset) * 2);
-			right: 57.5%;
+			right: 65%;
 			top: 21%;
 		}
 		&[data-pin="kvandju"] {
 			width: calc(var(--offset) * 2.3);
-			right: 58%;
+			right: 65%;
 			top: 50%;
-		}
-	}
-
-	@media (max-width: 880px) {
-		// &[data-pin="asana"] {
-		// 	width: calc(var(--offset) * 2.3);
-		// 	right: 56%;
-		// 	top: 29%;
-		// }
-		// &[data-pin="anson"] {
-		// 	right: 51%;
-		// 	top: 20%;
-		// }
-		&[data-pin="phentek"] {
-			right: 58%;
-			top: 21%;
-		}
-		// &[data-pin="kvandju"] {
-		// 	width: calc(var(--offset) * 2.3);
-		// 	right: 59%;
-		// 	top: 50%;
-		// }
-	}
-
-	@media (max-width: 780px) {
-		&[data-pin="kvandju"] {
-			right: 60%;
-			top: 50%;
-		}
-		&[data-pin="anson"] {
-			right: 51%;
-			top: 20%;
-		}
-		&[data-pin="phentek"] {
-			right: 59%;
-			top: 21%;
 		}
 	}
 
 	@media (max-width: 650px) {
 		&[data-pin="kvandju"] {
-			right: 62%;
+			right: 65%;
 			top: 50%;
 		}
 		&[data-pin="anson"] {
-			right: 51%;
-			top: 20%;
+			right: 68%;
+			top: 22%;
 		}
 		&[data-pin="hvason"] {
-			right: 56%;
+			right: 65%;
 			top: 16%;
 		}
 		&[data-pin="phentek"] {
-			right: 61%;
+			right: 60%;
 			top: 21%;
 		}
 		&[data-pin="asana"] {
-			right: 65%;
+			right: 70%;
 			top: 35%;
 		}
 	}
+
 	@media (max-width: 550px) {
 		&[data-pin="kvandju"] {
-			right: 64%;
+			right: 65%;
 			top: 50%;
 		}
+		&[data-pin="anson"] {
+			right: 58%;
+			top: 25%;
+		}
 		&[data-pin="hvason"] {
-			right: 57%;
-			top: 16%;
+			right: 65%;
+			top: 25%;
 		}
 		&[data-pin="phentek"] {
-			right: 62.7%;
+			right: 60%;
 			top: 21%;
 		}
+		&[data-pin="asana"] {
+			right: 70%;
+			top: 40%;
+		}
 	}
+
 	@media (max-width: 450px) {
 		&[data-pin="kvandju"] {
-			right: 60%;
-			top: 48%;
+			right: 65%;
+			top: 50%;
 		}
 		&[data-pin="anson"] {
-			right: 54%;
-			top: 20%;
+			right: 58%;
+			top: 30%;
 		}
 		&[data-pin="hvason"] {
-			right: 58%;
-			top: 15%;
+			right: 65%;
+			top: 30%;
 		}
 		&[data-pin="phentek"] {
-			right: 64%;
-			top: 20%;
+			right: 60%;
+			top: 25%;
 		}
 		&[data-pin="asana"] {
-			right: 65%;
-			top: 35%;
+			right: 70%;
+			top: 40%;
 		}
 	}
 
@@ -1256,7 +1235,7 @@
 			scroll-snap-type: x mandatory;
 			-webkit-overflow-scrolling: touch;
 			gap: 0;
-			padding:  1em;
+			padding: 1em;
 		}
 		&__card {
 			width: 70%;
@@ -1267,7 +1246,7 @@
 			scroll-snap-align: center;
 
 			&:not(:last-of-type) {
-				margin-right:  1em !important;
+				margin-right: 1em !important;
 			}
 			&-image {
 				width: 100%;
@@ -1338,14 +1317,13 @@
 			& img {
 				width: 100%;
 				height: 100%;
-				object-fit: fill;
-				width: 50%;
+				object-fit: cover;
 			}
 		}
 	}
 }
 .investments {
-	margin-top: calc(var(--offset) * 12);
+	margin-top: calc(var(--offset) * 14);
 	display: flex;
 	background-color: var(--color-bg-secondary);
 	align-items: flex-end;
@@ -2137,4 +2115,5 @@
 .container-network {
 	position: relative;
 	z-index: 5;
+	margin-bottom: calc(var(--offset) * 20);
 }
