@@ -846,8 +846,6 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: calc(max(calc(1.25 * 1vw), 15px) * 4);
-  margin-bottom: calc(var(--offset) * 4);
 }
 .main-head__desc {
   width: 50%;
@@ -977,6 +975,7 @@ template {
           justify-content: center;
   width: 100%;
   height: 100%;
+  min-height: 80vh;
   margin: auto 0;
 }
 .map__map svg {
@@ -1430,14 +1429,13 @@ template {
 .network__card-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
-  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .investments {
-  margin-top: calc(max(calc(1.25 * 1vw), 15px) * 12);
-  margin-top: calc(var(--offset) * 12);
+  margin-top: calc(max(calc(1.25 * 1vw), 15px) * 14);
+  margin-top: calc(var(--offset) * 14);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2308,6 +2306,12 @@ template {
 .container-network {
   position: relative;
   z-index: 5;
+  margin-bottom: calc(max(calc(1.25 * 1vw), 15px) * 20);
+  margin-bottom: calc(var(--offset) * 20);
+}
+
+html {
+  scroll-padding-top: 300px;
 }
 
 body {
@@ -2793,31 +2797,31 @@ html {
   .pin[data-pin=asana] {
     width: calc(max(calc(1.25 * 1vw), 15px) * 2.3);
     width: calc(var(--offset) * 2.3);
-    right: 60%;
+    right: 65%;
     top: 32%;
   }
   .pin[data-pin=hvason] {
     width: calc(max(calc(1.25 * 1vw), 15px) * 2);
     width: calc(var(--offset) * 2);
-    right: 55%;
+    right: 65%;
     top: 16%;
   }
   .pin[data-pin=anson] {
     width: calc(max(calc(1.25 * 1vw), 15px) * 2);
     width: calc(var(--offset) * 2);
-    right: 51%;
+    right: 60%;
     top: 20%;
   }
   .pin[data-pin=phentek] {
     width: calc(max(calc(1.25 * 1vw), 15px) * 2);
     width: calc(var(--offset) * 2);
-    right: 57.5%;
+    right: 65%;
     top: 21%;
   }
   .pin[data-pin=kvandju] {
     width: calc(max(calc(1.25 * 1vw), 15px) * 2.3);
     width: calc(var(--offset) * 2.3);
-    right: 58%;
+    right: 65%;
     top: 50%;
   }
   .desc {
@@ -3161,31 +3165,12 @@ html {
     top: 30%;
     height: 50%;
   }
+  html {
+    scroll-padding-top: 100px;
+  }
   main {
     padding-top: calc(max(calc(1.25 * 1vw), 15px) * 7);
     padding-top: calc(var(--offset) * 7);
-  }
-}
-
-@media (max-width: 880px) {
-  .pin[data-pin=phentek] {
-    right: 58%;
-    top: 21%;
-  }
-}
-
-@media (max-width: 780px) {
-  .pin[data-pin=kvandju] {
-    right: 60%;
-    top: 50%;
-  }
-  .pin[data-pin=anson] {
-    right: 51%;
-    top: 20%;
-  }
-  .pin[data-pin=phentek] {
-    right: 59%;
-    top: 21%;
   }
 }
 
@@ -3209,23 +3194,23 @@ html {
 
 @media (max-width: 650px) {
   .pin[data-pin=kvandju] {
-    right: 62%;
+    right: 65%;
     top: 50%;
   }
   .pin[data-pin=anson] {
-    right: 51%;
-    top: 20%;
+    right: 68%;
+    top: 22%;
   }
   .pin[data-pin=hvason] {
-    right: 56%;
+    right: 65%;
     top: 16%;
   }
   .pin[data-pin=phentek] {
-    right: 61%;
+    right: 60%;
     top: 21%;
   }
   .pin[data-pin=asana] {
-    right: 65%;
+    right: 70%;
     top: 35%;
   }
 }
@@ -3243,16 +3228,24 @@ html {
 
 @media (max-width: 550px) {
   .pin[data-pin=kvandju] {
-    right: 64%;
+    right: 65%;
     top: 50%;
   }
+  .pin[data-pin=anson] {
+    right: 58%;
+    top: 25%;
+  }
   .pin[data-pin=hvason] {
-    right: 57%;
-    top: 16%;
+    right: 65%;
+    top: 25%;
   }
   .pin[data-pin=phentek] {
-    right: 62.7%;
+    right: 60%;
     top: 21%;
+  }
+  .pin[data-pin=asana] {
+    right: 70%;
+    top: 40%;
   }
 }
 
@@ -3359,25 +3352,30 @@ html {
 }
 
 @media (max-width: 450px) {
+  .map__map svg {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+  }
   .pin[data-pin=kvandju] {
-    right: 60%;
-    top: 48%;
+    right: 65%;
+    top: 50%;
   }
   .pin[data-pin=anson] {
-    right: 54%;
-    top: 20%;
+    right: 58%;
+    top: 30%;
   }
   .pin[data-pin=hvason] {
-    right: 58%;
-    top: 15%;
+    right: 65%;
+    top: 30%;
   }
   .pin[data-pin=phentek] {
-    right: 64%;
-    top: 20%;
+    right: 60%;
+    top: 25%;
   }
   .pin[data-pin=asana] {
-    right: 65%;
-    top: 35%;
+    right: 70%;
+    top: 40%;
   }
 }
 
